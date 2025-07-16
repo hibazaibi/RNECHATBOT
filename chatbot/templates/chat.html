@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistant RNE Tunisie</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <div class="app-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="{% static 'logo.png' %}" alt="Logo RNE Tunisie" class="sidebar-logo">
+        <h2>Assistant RNE</h2>
+      </div>
+      <div class="sidebar-menu">
+          <a href="{% url 'chatbot' %}" class="menu-item {% if current_path == '/' %}active{% endif %}">
+    <i class="fas fa-comment-dots"></i>
+    <span>Chat Assistant</span>
+  </a>
+         <a href="{% url 'rne_info' %}" class="menu-item {% if current_path == '/rne-info/' %}active{% endif %}">
+    <i class="fas fa-info-circle"></i>
+    <span>Informations RNE</span>
+  </a>
+      <a href="{% url 'contact' %}" class="menu-item {% if current_path == '/contact/' %}active{% endif %}">
+    <i class="fas fa-headset"></i>
+    <span>Contact</span>
+  </a>
+      </div>
+      <div class="sidebar-footer">
+        <p>© 2025 Registre National des Entreprises</p>
+        <p>Tous droits réservés</p>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="chat-container">
+        <div class="chat-header">
+          <h1>Assistant Administratif du RNE</h1>
+          <p>Je suis là pour vous aider dans vos démarches administratives</p>
+        </div>
+
+        <div class="chat-box-container">
+          <div class="chat-box" id="chat-box">
+            {% for message in history %}
+              {% if message.role == "user" %}
+                <div class="chat-message user">
+                  <div class="message-content">
+                    <p>{{ message.content }}</p>
+                    <span class="message-time">{{ message.timestamp|default:"12:00" }}</span>
+                  </div>
+                  <div class="avatar user-avatar">
+                    <i class="fas fa-user-tie"></i>
+                  </div>
+                </div>
+              {% elif message.role == "assistant" %}
+                <div class="chat-message bot">
+                  <div class="avatar bot-avatar">
+                    <i class="fas fa-building"></i>
+                  </div>
+                  <div class="message-content">
+                    <p>{{ message.content|linebreaksbr }}</p>
+                    <span class="message-time">{{ message.timestamp|default:"12:00" }}</span>
+                  </div>
+                </div>
+              {% endif %}
+            {% empty %}
+              <div class="welcome-message">
+                <div class="welcome-content">
+                  <h3>Bienvenue à l'Assistant RNE</h3>
+                  <p>Je peux vous aider avec :</p>
+                  <ul class="assistance-list">
+                    <li><i class="fas fa-chevron-right"></i> Inscription au Registre National des Entreprises</li>
+                    <li><i class="fas fa-chevron-right"></i> Documents nécessaires pour les démarches</li>
+                    <li><i class="fas fa-chevron-right"></i> Réponses aux questions fréquentes</li>
+                  </ul>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <form method="post" class="chat-form">
+          {% csrf_token %}
+          <div class="input-container">
+            <input type="text" name="message" placeholder="Posez votre question concernant les démarches RNE..." required autocomplete="off">
+            <button type="submit" class="send-button">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+
+          <div class="form-footer">
+            <small>L'Assistant RNE peut faire des erreurs. Vérifiez les informations importantes.</small>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - RNE Tunisie</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <div class="app-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="{% static 'logo.png' %}" alt="Logo RNE Tunisie" class="sidebar-logo">
+        <h2>Assistant RNE</h2>
+      </div>
+      <div class="sidebar-menu">
+        <a href="{% url 'chatbot' %}" class="menu-item {% if current_path == '/' %}active{% endif %}">
+          <i class="fas fa-comment-dots"></i>
+          <span>Chat Assistant</span>
+        </a>
+        <a href="{% url 'rne_info' %}" class="menu-item {% if current_path == '/rne-info/' %}active{% endif %}">
+          <i class="fas fa-info-circle"></i>
+          <span>Informations RNE</span>
+        </a>
+        <a href="{% url 'contact' %}" class="menu-item {% if current_path == '/contact/' %}active{% endif %}">
+          <i class="fas fa-headset"></i>
+          <span>Contact</span>
+        </a>
+      </div>
+      <div class="sidebar-footer">
+        <p>© 2025 Registre National des Entreprises</p>
+        <p>Tous droits réservés</p>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="contact-page-container">
+        <div class="contact-header">
+          <h1><i class="fas fa-headset"></i> Contactez le RNE</h1>
+          <p>Plusieurs moyens sont disponibles pour nous contacter</p>
+        </div>
+
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h2>Téléphone</h2>
+              <p>+216 70 248 170</p>
+              <p class="contact-hours">Lundi-Vendredi: 8h30-16h30</p>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h2>Adresse</h2>
+              <address>
+                1 RUE LAC TOBA<br>
+                LES BERGES DU LAC 1<br>
+                1053 TUNIS
+              </address>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="contact-details">
+              <h2>Site Web</h2>
+              <a href="https://home.registre-entreprises.tn/" target="_blank" class="website-link">
+                https://home.registre-entreprises.tn/
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

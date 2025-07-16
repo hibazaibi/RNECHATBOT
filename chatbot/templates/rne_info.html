@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informations RNE</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <div class="app-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <img src="{% static 'logo.png' %}" alt="Logo RNE Tunisie" class="sidebar-logo">
+        <h2>Assistant RNE</h2>
+      </div>
+      <div class="sidebar-menu">
+        <a href="{% url 'chatbot' %}" class="menu-item {% if current_path == '/' %}active{% endif %}">
+          <i class="fas fa-comment-dots"></i>
+          <span>Chat Assistant</span>
+        </a>
+        <a href="{% url 'rne_info' %}" class="menu-item {% if current_path == '/rne-info/' %}active{% endif %}">
+          <i class="fas fa-info-circle"></i>
+          <span>Informations RNE</span>
+        </a>
+        <a href="{% url 'contact' %}" class="menu-item {% if current_path == '/contact/' %}active{% endif %}">
+          <i class="fas fa-headset"></i>
+          <span>Contact</span>
+        </a>
+      </div>
+      <div class="sidebar-footer">
+        <p>© 2025 Registre National des Entreprises</p>
+        <p>Tous droits réservés</p>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="info-page-container enhanced">
+        <div class="info-page-header">
+          <div>
+            <h1><i class="fas fa-info-circle"></i> À propos du RNE</h1>
+            <p class="info-subtitle">Comprendre la mission, le rôle et la structure du Registre National des Entreprises</p>
+          </div>
+          <a href="{% url 'chatbot' %}" class="back-to-chat enhanced">
+            <i class="fas fa-comments"></i> Revenir au Chat
+          </a>
+        </div>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-landmark"></i>
+            </div>
+            <div class="info-content">
+              <h2>Qui Sommes-Nous ?</h2>
+              <p>Le Centre National du Registre des Entreprises (CRNE) a été créé en vertu de l'article 4 de la loi N°2018-52 du 29 novembre 2018, relative au registre national des entreprises.</p>
+              <div class="info-highlight">
+                <p>Il est organisé conformément au décret N° 52-2019 relatif à l'organisation administrative et financière du Centre National du Registre des Entreprises.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <div class="info-content">
+              <h2>Statut Juridique</h2>
+              <p>Le CNRE est un Établissement Public Non Administratif (EPNA) doté de la personnalité morale et de l'autonomie financière et administrative sous tutelle de la Présidence du Gouvernement.</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="info-content">
+              <h2>Mission du RNE</h2>
+              <p>Le Centre a pour mission de gérer le Registre National des Entreprises RNE étant « une base de données publiques pour collecter les données et les informations relatives aux entreprises et leurs mises à disposition du public ainsi qu'aux institutions de l'État ».</p>
+              <p>Il est le lieu où sont immatriculées les entreprises (personnes morales et physiques) ainsi que leurs inscriptions modificatives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
