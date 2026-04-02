@@ -1,0 +1,149 @@
+You are an expert in AI solutions and technical communication.
+
+I will provide you with a presentation about an AI agent for analyzing “appels d’offres” (tender documents). Your task is to IMPROVE and RESTRUCTURE this presentation to make it:
+
+- more professional
+- clearer for a non-technical client
+- more business-oriented (less technical jargon)
+- more explanatory (not just titles, but real understanding)
+
+---
+
+## 🎯 OBJECTIVE
+
+The presentation must clearly explain:
+- what the system does
+- how it works (at a high level)
+- what value it brings
+- what has been achieved so far
+- what are the next steps
+
+IMPORTANT:
+Do NOT focus on technical details like LLM, regex, JSON, etc.  
+Focus on FUNCTIONAL explanation (what each step does and why).
+
+---
+
+## 🧠 WHAT YOU NEED TO IMPROVE
+
+### 1. Expand explanations
+
+For each step of the pipeline, explain clearly:
+
+- what the step does
+- why it is needed
+- what kind of information it produces
+
+Example:
+Instead of just saying “Extraction des informations”, explain:
+- what types of information (dates, exigences, critères…)
+- why they are important for the bidder
+- how they are used later
+
+---
+
+### 2. Add SCHEMAS / DIAGRAMS (VERY IMPORTANT)
+
+For each major part, propose visual schemas such as:
+
+- pipeline diagrams
+- input/output transformations
+- before/after examples
+- flow diagrams
+
+Example:
+- PDF → structured data → extracted information → final result
+- “document brut → informations clés → décision”
+
+Describe each schema clearly so it can be added to slides.
+
+---
+
+### 3. Improve pipeline explanation
+
+For each step, rewrite it in a client-friendly way:
+
+1. Ingestion  
+2. Segmentation  
+3. Détection des formulaires  
+4. Extraction des informations  
+5. Normalisation  
+6. Validation  
+7. Synthèse  
+
+For EACH step:
+- give a clear explanation
+- give examples
+- explain business value
+
+---
+
+### 4. Detail key concepts
+
+Explain clearly:
+
+#### 🔹 “Extraction des informations importantes”
+What are these informations?
+- dates limites
+- exigences techniques
+- critères d’évaluation
+- documents requis
+- conditions de soumission
+- garanties
+- lots
+
+#### 🔹 “Détection des formulaires”
+Explain:
+- what is a form in this context
+- why it is critical
+- examples (CV, prix, déclarations…)
+
+#### 🔹 “Résultat final”
+Explain:
+- what the user gets
+- how it helps prepare the offer
+- what decisions it enables
+
+---
+
+### 5. Add business value
+
+For each part, highlight:
+- gain de temps
+- réduction des erreurs
+- meilleure compréhension
+- aide à la décision
+
+---
+
+### 6. Keep a professional tone
+
+- clear, structured, and concise
+- suitable for a client presentation
+- no slang
+- no unnecessary technical terms
+
+---
+
+## 📦 OUTPUT FORMAT
+
+Return a full improved presentation with:
+
+- slide titles
+- slide content (bullet points or short paragraphs)
+- speaker notes (what to say orally)
+- suggested diagrams (described clearly)
+
+---
+
+## ⚠️ IMPORTANT
+
+- Do NOT remove the existing structure, improve it
+- Do NOT simplify too much (we still want depth)
+- Do NOT make it too technical
+- Focus on clarity + value + understanding
+
+---
+
+Now I will provide you with my presentation.  
+Improve it following all the instructions above.
